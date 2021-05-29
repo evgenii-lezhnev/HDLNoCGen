@@ -1,9 +1,20 @@
 # HDLNoCGen
-Генератор Verilog кода подсистемы связи сетей на кристалле
----
+**Генератор Verilog кода подсистемы связи сетей на кристалле**
+    
 Программа позволяет видуализировать циркулянтные графы, производить поиск кратчайших маршрутов на основе алгоритма Дейкстры, а также специализированных алгоритмов для циркулянтных графов.  
-Информацию о циркулянтных графах можно найти в публикации [Development of routing algorithms in networks-on-chip based on two-dimensional optimal circulant topologies](https://www.sciencedirect.com/science/article/pii/S2405844020300281).
----
+Информация о циркулянтных графах в публикации:    
+[Development of routing algorithms in networks-on-chip based on two-dimensional optimal circulant topologies](https://www.sciencedirect.com/science/article/pii/S2405844020300281).
+    
+# Контакты    
+elezhnev@hse.ru (Evgenii Lezhnev)     
+https://www.hse.ru/en/org/persons/207913081#sci     
+https://orcid.org/0000-0001-9990-6467
+
+a.romanov@hse.ru (Aleksandr Romanov, PhD)     
+https://www.hse.ru/en/staff/a.romanov#sci   
+https://www.researchgate.net/profile/Aleksandr-Romanov
+
+# Работа с программой   
 После запуска программы необходимо в поле "Циркулянт" ввести сигнатуру графа, с которым нужно работать. На данный момент программа умеет работать только с циркулянтными графами.  
 Сигнатура графа вводится в следующем формате: __N s1 s2 ... sn__
 ```
