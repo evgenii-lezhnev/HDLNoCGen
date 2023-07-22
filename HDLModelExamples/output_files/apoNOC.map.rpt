@@ -1,0 +1,1083 @@
+Analysis & Synthesis report for apoNOC
+Fri Dec 16 19:36:34 2022
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. Removed Registers Triggering Further Register Optimizations
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for Inferred Entity Instance: apo_router_5_nodes:r1|lpm_divide:Mod0
+ 13. Parameter Settings for Inferred Entity Instance: apo_router_5_nodes:r1|lpm_divide:Div0
+ 14. Parameter Settings for Inferred Entity Instance: apo_router_5_nodes:r2|lpm_divide:Mod0
+ 15. Parameter Settings for Inferred Entity Instance: apo_router_5_nodes:r2|lpm_divide:Div0
+ 16. Parameter Settings for Inferred Entity Instance: apo_router_5_nodes:r3|lpm_divide:Mod0
+ 17. Parameter Settings for Inferred Entity Instance: apo_router_5_nodes:r3|lpm_divide:Div0
+ 18. Parameter Settings for Inferred Entity Instance: apo_router_5_nodes:r4|lpm_divide:Mod0
+ 19. Parameter Settings for Inferred Entity Instance: apo_router_5_nodes:r4|lpm_divide:Div0
+ 20. Parameter Settings for Inferred Entity Instance: apo_router_5_nodes:r5|lpm_divide:Mod0
+ 21. Parameter Settings for Inferred Entity Instance: apo_router_5_nodes:r5|lpm_divide:Div0
+ 22. Port Connectivity Checks: "apo_router_5_nodes:r5"
+ 23. Port Connectivity Checks: "apo_router_5_nodes:r4"
+ 24. Port Connectivity Checks: "apo_router_5_nodes:r3"
+ 25. Port Connectivity Checks: "apo_router_5_nodes:r2"
+ 26. Port Connectivity Checks: "apo_router_5_nodes:r1"
+ 27. Post-Synthesis Netlist Statistics for Top Partition
+ 28. Elapsed Time Per Partition
+ 29. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Fri Dec 16 19:36:34 2022       ;
+; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                   ; apoNOC                                      ;
+; Top-level Entity Name           ; toplevel_apo_5_nodes                        ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 153                                         ;
+; Total pins                      ; 148                                         ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                               ;
++---------------------------------------------------------------------------------+----------------------+--------------------+
+; Option                                                                          ; Setting              ; Default Value      ;
++---------------------------------------------------------------------------------+----------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6         ;                    ;
+; Top-level entity name                                                           ; toplevel_apo_5_nodes ; apoNOC             ;
+; Family name                                                                     ; Cyclone V            ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                  ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation      ; On                   ; On                 ;
+; Enable compact report table                                                     ; Off                  ; Off                ;
+; Restructure Multiplexers                                                        ; Auto                 ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                  ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                  ; Off                ;
+; Preserve fewer node names                                                       ; On                   ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable               ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001         ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993            ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto                 ; Auto               ;
+; Safe State Machine                                                              ; Off                  ; Off                ;
+; Extract Verilog State Machines                                                  ; On                   ; On                 ;
+; Extract VHDL State Machines                                                     ; On                   ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                  ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000                 ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                  ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                   ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                   ; On                 ;
+; Parallel Synthesis                                                              ; On                   ; On                 ;
+; DSP Block Balancing                                                             ; Auto                 ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                   ; On                 ;
+; Power-Up Don't Care                                                             ; On                   ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                  ; Off                ;
+; Remove Duplicate Registers                                                      ; On                   ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                  ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                  ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                  ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                  ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                  ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                   ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                  ; Off                ;
+; Optimization Technique                                                          ; Balanced             ; Balanced           ;
+; Carry Chain Length                                                              ; 70                   ; 70                 ;
+; Auto Carry Chains                                                               ; On                   ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                   ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                  ; Off                ;
+; Auto ROM Replacement                                                            ; On                   ; On                 ;
+; Auto RAM Replacement                                                            ; On                   ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                   ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto                 ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto                 ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                   ; On                 ;
+; Strict RAM Replacement                                                          ; Off                  ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                   ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                  ; Off                ;
+; Auto Resource Sharing                                                           ; Off                  ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                  ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                  ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                  ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                   ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                  ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                   ; On                 ;
+; Report Parameter Settings                                                       ; On                   ; On                 ;
+; Report Source Assignments                                                       ; On                   ; On                 ;
+; Report Connectivity Checks                                                      ; On                   ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                  ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                    ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation   ; Normal compilation ;
+; HDL message level                                                               ; Level2               ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                  ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000                 ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000                 ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                  ; 100                ;
+; Clock MUX Protection                                                            ; On                   ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                  ; Off                ;
+; Block Design Naming                                                             ; Auto                 ; Auto               ;
+; SDC constraint protection                                                       ; Off                  ; Off                ;
+; Synthesis Effort                                                                ; Auto                 ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                   ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                  ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium               ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto                 ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                   ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                   ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                  ; Off                ;
++---------------------------------------------------------------------------------+----------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                                                                     ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                                                                                 ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+; toplevel_apo_100_nodes.v         ; yes             ; User Verilog HDL File        ; C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_100_nodes.v ;         ;
+; apo_router_9_nodes.v             ; yes             ; User Verilog HDL File        ; C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_9_nodes.v     ;         ;
+; select_data_9.v                  ; yes             ; User Verilog HDL File        ; C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_9.v          ;         ;
+; apo_router_5_nodes.v             ; yes             ; User Verilog HDL File        ; C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v     ;         ;
+; select_data_5.v                  ; yes             ; User Verilog HDL File        ; C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_5.v          ;         ;
+; toplevel_apo_5_nodes.v           ; yes             ; User Verilog HDL File        ; C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v   ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/lpm_divide.tdf                                                                                                                        ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/abs_divider.inc                                                                                                                       ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/sign_div_unsign.inc                                                                                                                   ;         ;
+; aglobal171.inc                   ; yes             ; Megafunction                 ; c:/intelfpga_lite/17.1/quartus/libraries/megafunctions/aglobal171.inc                                                                                                                        ;         ;
+; db/lpm_divide_qfo.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/db/lpm_divide_qfo.tdf    ;         ;
+; db/abs_divider_0ag.tdf           ; yes             ; Auto-Generated Megafunction  ; C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/db/abs_divider_0ag.tdf   ;         ;
+; db/alt_u_div_gse.tdf             ; yes             ; Auto-Generated Megafunction  ; C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/db/alt_u_div_gse.tdf     ;         ;
+; db/lpm_abs_in9.tdf               ; yes             ; Auto-Generated Megafunction  ; C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/db/lpm_abs_in9.tdf       ;         ;
+; db/lpm_divide_nno.tdf            ; yes             ; Auto-Generated Megafunction  ; C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/db/lpm_divide_nno.tdf    ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 193       ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 284       ;
+;     -- 7 input functions                    ; 15        ;
+;     -- 6 input functions                    ; 84        ;
+;     -- 5 input functions                    ; 82        ;
+;     -- 4 input functions                    ; 38        ;
+;     -- <=3 input functions                  ; 65        ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 153       ;
+;                                             ;           ;
+; I/O pins                                    ; 148       ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 153       ;
+; Total fan-out                               ; 1890      ;
+; Average fan-out                             ; 2.58      ;
++---------------------------------------------+-----------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                ;
++------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
+; Compilation Hierarchy Node               ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                      ; Entity Name          ; Library Name ;
++------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
+; |toplevel_apo_5_nodes                    ; 284 (0)             ; 153 (0)                   ; 0                 ; 0          ; 148  ; 0            ; |toplevel_apo_5_nodes                                                                                                                    ; toplevel_apo_5_nodes ; work         ;
+;    |apo_router_5_nodes:r1|               ; 46 (44)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |toplevel_apo_5_nodes|apo_router_5_nodes:r1                                                                                              ; apo_router_5_nodes   ; work         ;
+;       |lpm_divide:Div0|                  ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_apo_5_nodes|apo_router_5_nodes:r1|lpm_divide:Div0                                                                              ; lpm_divide           ; work         ;
+;          |lpm_divide_nno:auto_generated| ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_apo_5_nodes|apo_router_5_nodes:r1|lpm_divide:Div0|lpm_divide_nno:auto_generated                                                ; lpm_divide_nno       ; work         ;
+;             |abs_divider_0ag:divider|    ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_apo_5_nodes|apo_router_5_nodes:r1|lpm_divide:Div0|lpm_divide_nno:auto_generated|abs_divider_0ag:divider                        ; abs_divider_0ag      ; work         ;
+;    |apo_router_5_nodes:r2|               ; 34 (32)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |toplevel_apo_5_nodes|apo_router_5_nodes:r2                                                                                              ; apo_router_5_nodes   ; work         ;
+;       |lpm_divide:Div0|                  ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_apo_5_nodes|apo_router_5_nodes:r2|lpm_divide:Div0                                                                              ; lpm_divide           ; work         ;
+;          |lpm_divide_nno:auto_generated| ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_apo_5_nodes|apo_router_5_nodes:r2|lpm_divide:Div0|lpm_divide_nno:auto_generated                                                ; lpm_divide_nno       ; work         ;
+;             |abs_divider_0ag:divider|    ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_apo_5_nodes|apo_router_5_nodes:r2|lpm_divide:Div0|lpm_divide_nno:auto_generated|abs_divider_0ag:divider                        ; abs_divider_0ag      ; work         ;
+;    |apo_router_5_nodes:r3|               ; 34 (32)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |toplevel_apo_5_nodes|apo_router_5_nodes:r3                                                                                              ; apo_router_5_nodes   ; work         ;
+;       |lpm_divide:Div0|                  ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_apo_5_nodes|apo_router_5_nodes:r3|lpm_divide:Div0                                                                              ; lpm_divide           ; work         ;
+;          |lpm_divide_nno:auto_generated| ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_apo_5_nodes|apo_router_5_nodes:r3|lpm_divide:Div0|lpm_divide_nno:auto_generated                                                ; lpm_divide_nno       ; work         ;
+;             |abs_divider_0ag:divider|    ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_apo_5_nodes|apo_router_5_nodes:r3|lpm_divide:Div0|lpm_divide_nno:auto_generated|abs_divider_0ag:divider                        ; abs_divider_0ag      ; work         ;
+;    |apo_router_5_nodes:r4|               ; 41 (39)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |toplevel_apo_5_nodes|apo_router_5_nodes:r4                                                                                              ; apo_router_5_nodes   ; work         ;
+;       |lpm_divide:Div0|                  ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_apo_5_nodes|apo_router_5_nodes:r4|lpm_divide:Div0                                                                              ; lpm_divide           ; work         ;
+;          |lpm_divide_nno:auto_generated| ; 2 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_apo_5_nodes|apo_router_5_nodes:r4|lpm_divide:Div0|lpm_divide_nno:auto_generated                                                ; lpm_divide_nno       ; work         ;
+;             |abs_divider_0ag:divider|    ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_apo_5_nodes|apo_router_5_nodes:r4|lpm_divide:Div0|lpm_divide_nno:auto_generated|abs_divider_0ag:divider                        ; abs_divider_0ag      ; work         ;
+;    |apo_router_5_nodes:r5|               ; 40 (37)             ; 18 (18)                   ; 0                 ; 0          ; 0    ; 0            ; |toplevel_apo_5_nodes|apo_router_5_nodes:r5                                                                                              ; apo_router_5_nodes   ; work         ;
+;       |lpm_divide:Div0|                  ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_apo_5_nodes|apo_router_5_nodes:r5|lpm_divide:Div0                                                                              ; lpm_divide           ; work         ;
+;          |lpm_divide_nno:auto_generated| ; 3 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_apo_5_nodes|apo_router_5_nodes:r5|lpm_divide:Div0|lpm_divide_nno:auto_generated                                                ; lpm_divide_nno       ; work         ;
+;             |abs_divider_0ag:divider|    ; 3 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_apo_5_nodes|apo_router_5_nodes:r5|lpm_divide:Div0|lpm_divide_nno:auto_generated|abs_divider_0ag:divider                        ; abs_divider_0ag      ; work         ;
+;                |lpm_abs_in9:my_abs_num|  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |toplevel_apo_5_nodes|apo_router_5_nodes:r5|lpm_divide:Div0|lpm_divide_nno:auto_generated|abs_divider_0ag:divider|lpm_abs_in9:my_abs_num ; lpm_abs_in9          ; work         ;
+;    |select_data_5:sel|                   ; 89 (89)             ; 63 (63)                   ; 0                 ; 0          ; 0    ; 0            ; |toplevel_apo_5_nodes|select_data_5:sel                                                                                                  ; select_data_5        ; work         ;
++------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------+----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                              ;
++----------------------------------------+----------------------------------------+
+; Register name                          ; Reason for Removal                     ;
++----------------------------------------+----------------------------------------+
+; apo_router_5_nodes:r3|out_r2L[6]       ; Stuck at GND due to stuck port data_in ;
+; apo_router_5_nodes:r2|out_r1L[1..6]    ; Stuck at GND due to stuck port data_in ;
+; apo_router_5_nodes:r4|out_r2L[6]       ; Stuck at GND due to stuck port data_in ;
+; apo_router_5_nodes:r3|out_r1L[1..6]    ; Stuck at GND due to stuck port data_in ;
+; apo_router_5_nodes:r5|out_r2L[6]       ; Stuck at GND due to stuck port data_in ;
+; apo_router_5_nodes:r4|out_r1L[1..6]    ; Stuck at GND due to stuck port data_in ;
+; apo_router_5_nodes:r1|out_r2L[6]       ; Stuck at GND due to stuck port data_in ;
+; apo_router_5_nodes:r5|out_r1L[1..6]    ; Stuck at GND due to stuck port data_in ;
+; apo_router_5_nodes:r2|out_r2L[6]       ; Stuck at GND due to stuck port data_in ;
+; apo_router_5_nodes:r1|out_r1L[1..6]    ; Stuck at GND due to stuck port data_in ;
+; apo_router_5_nodes:r3|out_r2L[0]       ; Stuck at GND due to stuck port data_in ;
+; apo_router_5_nodes:r2|out_r1L[0]       ; Lost fanout                            ;
+; apo_router_5_nodes:r3|out_r2L[1..5]    ; Stuck at GND due to stuck port data_in ;
+; apo_router_5_nodes:r4|out_r2L[0..2]    ; Stuck at GND due to stuck port data_in ;
+; apo_router_5_nodes:r3|out_r1L[0]       ; Lost fanout                            ;
+; apo_router_5_nodes:r4|out_r2L[3..5]    ; Stuck at GND due to stuck port data_in ;
+; apo_router_5_nodes:r5|out_r2L[0]       ; Stuck at GND due to stuck port data_in ;
+; apo_router_5_nodes:r4|out_r1L[0]       ; Lost fanout                            ;
+; apo_router_5_nodes:r5|out_r2L[1..5]    ; Stuck at GND due to stuck port data_in ;
+; apo_router_5_nodes:r1|out_r2L[0,2]     ; Stuck at GND due to stuck port data_in ;
+; apo_router_5_nodes:r5|out_r1L[0]       ; Lost fanout                            ;
+; apo_router_5_nodes:r1|out_r2L[1,3..5]  ; Stuck at GND due to stuck port data_in ;
+; apo_router_5_nodes:r2|out_r2L[0]       ; Stuck at GND due to stuck port data_in ;
+; apo_router_5_nodes:r1|out_r1L[0]       ; Lost fanout                            ;
+; apo_router_5_nodes:r2|out_r2L[1..5]    ; Stuck at GND due to stuck port data_in ;
+; apo_router_5_nodes:r4|out_r2R[3..5]    ; Stuck at GND due to stuck port data_in ;
+; apo_router_5_nodes:r5|out_r2R[3..5]    ; Stuck at GND due to stuck port data_in ;
+; apo_router_5_nodes:r1|out_r2R[3..5]    ; Stuck at GND due to stuck port data_in ;
+; apo_router_5_nodes:r2|out_r2R[3..5]    ; Stuck at GND due to stuck port data_in ;
+; apo_router_5_nodes:r3|out_r2R[3..5]    ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 85 ;                                        ;
++----------------------------------------+----------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                        ;
++----------------------------------+---------------------------+---------------------------------------------------------------------+
+; Register name                    ; Reason for Removal        ; Registers Removed due to This Register                              ;
++----------------------------------+---------------------------+---------------------------------------------------------------------+
+; apo_router_5_nodes:r3|out_r2L[6] ; Stuck at GND              ; apo_router_5_nodes:r2|out_r1L[0], apo_router_5_nodes:r1|out_r2L[2], ;
+;                                  ; due to stuck port data_in ; apo_router_5_nodes:r1|out_r2L[0], apo_router_5_nodes:r1|out_r2L[1], ;
+;                                  ;                           ; apo_router_5_nodes:r1|out_r2L[5], apo_router_5_nodes:r1|out_r2L[4], ;
+;                                  ;                           ; apo_router_5_nodes:r1|out_r2L[3], apo_router_5_nodes:r1|out_r2R[5], ;
+;                                  ;                           ; apo_router_5_nodes:r1|out_r2R[4], apo_router_5_nodes:r1|out_r2R[3]  ;
+; apo_router_5_nodes:r5|out_r2L[6] ; Stuck at GND              ; apo_router_5_nodes:r3|out_r2L[0], apo_router_5_nodes:r3|out_r2L[1], ;
+;                                  ; due to stuck port data_in ; apo_router_5_nodes:r3|out_r2L[2], apo_router_5_nodes:r3|out_r2L[5], ;
+;                                  ;                           ; apo_router_5_nodes:r3|out_r2L[4], apo_router_5_nodes:r3|out_r2L[3], ;
+;                                  ;                           ; apo_router_5_nodes:r4|out_r1L[0], apo_router_5_nodes:r3|out_r2R[4], ;
+;                                  ;                           ; apo_router_5_nodes:r3|out_r2R[5], apo_router_5_nodes:r3|out_r2R[3]  ;
+; apo_router_5_nodes:r2|out_r2L[6] ; Stuck at GND              ; apo_router_5_nodes:r5|out_r2L[0], apo_router_5_nodes:r5|out_r2L[1], ;
+;                                  ; due to stuck port data_in ; apo_router_5_nodes:r5|out_r2L[2], apo_router_5_nodes:r5|out_r2L[5], ;
+;                                  ;                           ; apo_router_5_nodes:r5|out_r2L[4], apo_router_5_nodes:r5|out_r2L[3], ;
+;                                  ;                           ; apo_router_5_nodes:r1|out_r1L[0], apo_router_5_nodes:r5|out_r2R[5], ;
+;                                  ;                           ; apo_router_5_nodes:r5|out_r2R[4], apo_router_5_nodes:r5|out_r2R[3]  ;
+; apo_router_5_nodes:r3|out_r1L[5] ; Stuck at GND              ; apo_router_5_nodes:r2|out_r2L[0], apo_router_5_nodes:r2|out_r2L[1], ;
+;                                  ; due to stuck port data_in ; apo_router_5_nodes:r2|out_r2L[5], apo_router_5_nodes:r2|out_r2R[5]  ;
+; apo_router_5_nodes:r5|out_r1L[5] ; Stuck at GND              ; apo_router_5_nodes:r4|out_r2L[1], apo_router_5_nodes:r4|out_r2L[0], ;
+;                                  ; due to stuck port data_in ; apo_router_5_nodes:r4|out_r2L[5], apo_router_5_nodes:r4|out_r2R[5]  ;
+; apo_router_5_nodes:r4|out_r2L[6] ; Stuck at GND              ; apo_router_5_nodes:r2|out_r2L[2], apo_router_5_nodes:r2|out_r2L[4], ;
+;                                  ; due to stuck port data_in ; apo_router_5_nodes:r2|out_r2R[4]                                    ;
+; apo_router_5_nodes:r1|out_r2L[6] ; Stuck at GND              ; apo_router_5_nodes:r4|out_r2L[2], apo_router_5_nodes:r4|out_r2L[4], ;
+;                                  ; due to stuck port data_in ; apo_router_5_nodes:r4|out_r2R[4]                                    ;
+; apo_router_5_nodes:r3|out_r1L[6] ; Stuck at GND              ; apo_router_5_nodes:r2|out_r2L[3], apo_router_5_nodes:r2|out_r2R[3]  ;
+;                                  ; due to stuck port data_in ;                                                                     ;
+; apo_router_5_nodes:r5|out_r1L[6] ; Stuck at GND              ; apo_router_5_nodes:r4|out_r2L[3], apo_router_5_nodes:r4|out_r2R[3]  ;
+;                                  ; due to stuck port data_in ;                                                                     ;
+; apo_router_5_nodes:r3|out_r1L[2] ; Stuck at GND              ; apo_router_5_nodes:r3|out_r1L[0]                                    ;
+;                                  ; due to stuck port data_in ;                                                                     ;
++----------------------------------+---------------------------+---------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 153   ;
+; Number of registers using Synchronous Clear  ; 26    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 51    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |toplevel_apo_5_nodes|select_data_5:sel|out_router4[3] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r1|out_r1R[6] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r2|out_r1R[6] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r3|out_r1L[6] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r4|out_r1L[6] ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r5|out_r1R[6] ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |toplevel_apo_5_nodes|select_data_5:sel|out_router2[0] ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r5|out_r1R[4] ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r5|out_r1L[3] ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r2|out_r1R[5] ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r2|out_r1L[2] ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 9 LEs                ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|select_data_5:sel|out_router5[4] ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 6 LEs                ; 3 LEs                  ; Yes        ; |toplevel_apo_5_nodes|select_data_5:sel|out_router3[3] ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r1|out_r1R[1] ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r1|out_r1L[4] ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r3|out_r1R[3] ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r3|out_r1L[0] ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r4|out_r1R[1] ;
+; 4:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r4|out_r1L[0] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r1|out_r2L[6] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r2|out_r2L[6] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r3|out_r2L[6] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r4|out_r2R[6] ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r5|out_r2R[6] ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r4|out_r2R[4] ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r4|out_r2L[0] ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r3|out_r2R[4] ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r3|out_r2L[5] ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r5|out_r2R[5] ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r5|out_r2L[3] ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r1|out_r2R[1] ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r1|out_r2L[3] ;
+; 6:1                ; 3 bits    ; 12 LEs        ; 9 LEs                ; 3 LEs                  ; Yes        ; |toplevel_apo_5_nodes|select_data_5:sel|out_router3[5] ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r2|out_r2R[1] ;
+; 5:1                ; 6 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; Yes        ; |toplevel_apo_5_nodes|apo_router_5_nodes:r2|out_r2L[1] ;
+; 64:1               ; 7 bits    ; 294 LEs       ; 42 LEs               ; 252 LEs                ; Yes        ; |toplevel_apo_5_nodes|select_data_5:sel|hex_data[1]    ;
+; 64:1               ; 7 bits    ; 294 LEs       ; 42 LEs               ; 252 LEs                ; Yes        ; |toplevel_apo_5_nodes|select_data_5:sel|hex_router[1]  ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |toplevel_apo_5_nodes|apo_router_5_nodes:r1|result_2   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |toplevel_apo_5_nodes|apo_router_5_nodes:r2|result_2   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |toplevel_apo_5_nodes|apo_router_5_nodes:r3|result_2   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |toplevel_apo_5_nodes|apo_router_5_nodes:r4|result_2   ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |toplevel_apo_5_nodes|apo_router_5_nodes:r5|result_1   ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |toplevel_apo_5_nodes|select_data_5:sel|data           ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |toplevel_apo_5_nodes|select_data_5:sel|router         ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |toplevel_apo_5_nodes|select_data_5:sel|ShiftLeft0     ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |toplevel_apo_5_nodes|select_data_5:sel|ShiftLeft0     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |toplevel_apo_5_nodes|select_data_5:sel|ShiftLeft0     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |toplevel_apo_5_nodes|select_data_5:sel|ShiftLeft0     ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |toplevel_apo_5_nodes|select_data_5:sel|ShiftLeft0     ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |toplevel_apo_5_nodes|select_data_5:sel|ShiftLeft0     ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |toplevel_apo_5_nodes|apo_router_5_nodes:r1|end_data   ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |toplevel_apo_5_nodes|apo_router_5_nodes:r2|end_data   ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |toplevel_apo_5_nodes|apo_router_5_nodes:r3|end_data   ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |toplevel_apo_5_nodes|apo_router_5_nodes:r4|end_data   ;
+; 6:1                ; 6 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |toplevel_apo_5_nodes|apo_router_5_nodes:r5|end_data   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: apo_router_5_nodes:r1|lpm_divide:Mod0 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 3              ; Untyped                                      ;
+; LPM_WIDTHD             ; 3              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_qfo ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: apo_router_5_nodes:r1|lpm_divide:Div0 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 3              ; Untyped                                      ;
+; LPM_WIDTHD             ; 3              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_nno ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: apo_router_5_nodes:r2|lpm_divide:Mod0 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 3              ; Untyped                                      ;
+; LPM_WIDTHD             ; 3              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_qfo ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: apo_router_5_nodes:r2|lpm_divide:Div0 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 3              ; Untyped                                      ;
+; LPM_WIDTHD             ; 3              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_nno ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: apo_router_5_nodes:r3|lpm_divide:Mod0 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 3              ; Untyped                                      ;
+; LPM_WIDTHD             ; 3              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_qfo ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: apo_router_5_nodes:r3|lpm_divide:Div0 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 3              ; Untyped                                      ;
+; LPM_WIDTHD             ; 3              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_nno ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: apo_router_5_nodes:r4|lpm_divide:Mod0 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 3              ; Untyped                                      ;
+; LPM_WIDTHD             ; 3              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_qfo ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: apo_router_5_nodes:r4|lpm_divide:Div0 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 3              ; Untyped                                      ;
+; LPM_WIDTHD             ; 3              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_nno ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: apo_router_5_nodes:r5|lpm_divide:Mod0 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 3              ; Untyped                                      ;
+; LPM_WIDTHD             ; 3              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_qfo ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: apo_router_5_nodes:r5|lpm_divide:Div0 ;
++------------------------+----------------+----------------------------------------------+
+; Parameter Name         ; Value          ; Type                                         ;
++------------------------+----------------+----------------------------------------------+
+; LPM_WIDTHN             ; 3              ; Untyped                                      ;
+; LPM_WIDTHD             ; 3              ; Untyped                                      ;
+; LPM_NREPRESENTATION    ; SIGNED         ; Untyped                                      ;
+; LPM_DREPRESENTATION    ; SIGNED         ; Untyped                                      ;
+; LPM_PIPELINE           ; 0              ; Untyped                                      ;
+; LPM_REMAINDERPOSITIVE  ; FALSE          ; Untyped                                      ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                      ;
+; CBXI_PARAMETER         ; lpm_divide_nno ; Untyped                                      ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                      ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                      ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                   ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                 ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                 ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                               ;
++------------------------+----------------+----------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Port Connectivity Checks: "apo_router_5_nodes:r5"   ;
++-------------------+-------+----------+--------------+
+; Port              ; Type  ; Severity ; Details      ;
++-------------------+-------+----------+--------------+
+; router_name[1..0] ; Input ; Info     ; Stuck at GND ;
+; router_name[2]    ; Input ; Info     ; Stuck at VCC ;
++-------------------+-------+----------+--------------+
+
+
++-----------------------------------------------------+
+; Port Connectivity Checks: "apo_router_5_nodes:r4"   ;
++-------------------+-------+----------+--------------+
+; Port              ; Type  ; Severity ; Details      ;
++-------------------+-------+----------+--------------+
+; router_name[1..0] ; Input ; Info     ; Stuck at VCC ;
+; router_name[2]    ; Input ; Info     ; Stuck at GND ;
++-------------------+-------+----------+--------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "apo_router_5_nodes:r3" ;
++----------------+-------+----------+---------------+
+; Port           ; Type  ; Severity ; Details       ;
++----------------+-------+----------+---------------+
+; router_name[2] ; Input ; Info     ; Stuck at GND  ;
+; router_name[1] ; Input ; Info     ; Stuck at VCC  ;
+; router_name[0] ; Input ; Info     ; Stuck at GND  ;
++----------------+-------+----------+---------------+
+
+
++-----------------------------------------------------+
+; Port Connectivity Checks: "apo_router_5_nodes:r2"   ;
++-------------------+-------+----------+--------------+
+; Port              ; Type  ; Severity ; Details      ;
++-------------------+-------+----------+--------------+
+; router_name[2..1] ; Input ; Info     ; Stuck at GND ;
+; router_name[0]    ; Input ; Info     ; Stuck at VCC ;
++-------------------+-------+----------+--------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "apo_router_5_nodes:r1" ;
++-------------+-------+----------+------------------+
+; Port        ; Type  ; Severity ; Details          ;
++-------------+-------+----------+------------------+
+; router_name ; Input ; Info     ; Stuck at GND     ;
++-------------+-------+----------+------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 153                         ;
+;     ENA               ; 25                          ;
+;     ENA SCLR          ; 26                          ;
+;     plain             ; 102                         ;
+; arriav_lcell_comb     ; 285                         ;
+;     arith             ; 10                          ;
+;         3 data inputs ; 6                           ;
+;         4 data inputs ; 4                           ;
+;     extend            ; 15                          ;
+;         7 data inputs ; 15                          ;
+;     normal            ; 260                         ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 31                          ;
+;         3 data inputs ; 28                          ;
+;         4 data inputs ; 34                          ;
+;         5 data inputs ; 82                          ;
+;         6 data inputs ; 84                          ;
+; boundary_port         ; 148                         ;
+;                       ;                             ;
+; Max LUT depth         ; 6.00                        ;
+; Average LUT depth     ; 3.94                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:06     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Fri Dec 16 19:36:16 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off apoNOC -c apoNOC
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Warning (12019): Can't analyze file -- file ../../../Circul_routing_09_04_2021/WindowsFormsApplication1/bin/Debug/C(9; 2, 3) smart routing files/toplevel_smart_9_nodes.v is missing
+Info (12021): Found 1 design units, including 1 entities, in source file toplevel_apo_100_nodes.v
+    Info (12023): Found entity 1: toplevel_apo_100_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_100_nodes.v Line: 5
+Warning (10274): Verilog HDL macro warning at toplevel_apo_81_nodes.v(4): overriding existing definition for macro "N_COUNT", which was defined in "toplevel_apo_100_nodes.v", line 4 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_81_nodes.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file toplevel_apo_81_nodes.v
+    Info (12023): Found entity 1: toplevel_apo_81_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_81_nodes.v Line: 5
+Warning (10274): Verilog HDL macro warning at toplevel_apo_64_nodes.v(4): overriding existing definition for macro "N_COUNT", which was defined in "toplevel_apo_100_nodes.v", line 4 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_64_nodes.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file toplevel_apo_64_nodes.v
+    Info (12023): Found entity 1: toplevel_apo_64_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_64_nodes.v Line: 5
+Warning (10274): Verilog HDL macro warning at toplevel_apo_49_nodes.v(2): overriding existing definition for macro "N", which was defined in "toplevel_apo_100_nodes.v", line 2 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_49_nodes.v Line: 2
+Warning (10274): Verilog HDL macro warning at toplevel_apo_49_nodes.v(3): overriding existing definition for macro "N2", which was defined in "toplevel_apo_100_nodes.v", line 3 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_49_nodes.v Line: 3
+Warning (10274): Verilog HDL macro warning at toplevel_apo_49_nodes.v(4): overriding existing definition for macro "N_COUNT", which was defined in "toplevel_apo_100_nodes.v", line 4 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_49_nodes.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file toplevel_apo_49_nodes.v
+    Info (12023): Found entity 1: toplevel_apo_49_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_49_nodes.v Line: 5
+Warning (10274): Verilog HDL macro warning at toplevel_apo_36_nodes.v(4): overriding existing definition for macro "N_COUNT", which was defined in "toplevel_apo_100_nodes.v", line 4 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_36_nodes.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file toplevel_apo_36_nodes.v
+    Info (12023): Found entity 1: toplevel_apo_36_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_36_nodes.v Line: 5
+Warning (10274): Verilog HDL macro warning at toplevel_apo_25_nodes.v(2): overriding existing definition for macro "N", which was defined in "toplevel_apo_100_nodes.v", line 2 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_25_nodes.v Line: 2
+Warning (10274): Verilog HDL macro warning at toplevel_apo_25_nodes.v(3): overriding existing definition for macro "N2", which was defined in "toplevel_apo_100_nodes.v", line 3 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_25_nodes.v Line: 3
+Warning (10274): Verilog HDL macro warning at toplevel_apo_25_nodes.v(4): overriding existing definition for macro "N_COUNT", which was defined in "toplevel_apo_100_nodes.v", line 4 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_25_nodes.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file toplevel_apo_25_nodes.v
+    Info (12023): Found entity 1: toplevel_apo_25_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_25_nodes.v Line: 5
+Warning (10274): Verilog HDL macro warning at apo_router_9_nodes.v(5): overriding existing definition for macro "N", which was defined in "toplevel_apo_100_nodes.v", line 2 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_9_nodes.v Line: 5
+Warning (10274): Verilog HDL macro warning at apo_router_9_nodes.v(6): overriding existing definition for macro "N2", which was defined in "toplevel_apo_100_nodes.v", line 3 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_9_nodes.v Line: 6
+Critical Warning (10191): Verilog HDL Compiler Directive warning at apo_router_9_nodes.v(145): text macro "k" is undefined File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_9_nodes.v Line: 145
+Info (12021): Found 1 design units, including 1 entities, in source file apo_router_9_nodes.v
+    Info (12023): Found entity 1: apo_router_9_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_9_nodes.v Line: 7
+Warning (10274): Verilog HDL macro warning at select_data_9.v(4): overriding existing definition for macro "K", which was defined in "apo_router_9_nodes.v", line 4 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_9.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file select_data_9.v
+    Info (12023): Found entity 1: select_data_9 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_9.v Line: 6
+Warning (10274): Verilog HDL macro warning at toplevel_apo_9_nodes.v(4): overriding existing definition for macro "N_COUNT", which was defined in "toplevel_apo_100_nodes.v", line 4 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_9_nodes.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file toplevel_apo_9_nodes.v
+    Info (12023): Found entity 1: toplevel_apo_9_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_9_nodes.v Line: 5
+Warning (10274): Verilog HDL macro warning at apo_router_16_nodes.v(4): overriding existing definition for macro "K", which was defined in "apo_router_9_nodes.v", line 4 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_16_nodes.v Line: 4
+Warning (10274): Verilog HDL macro warning at apo_router_16_nodes.v(5): overriding existing definition for macro "N", which was defined in "toplevel_apo_100_nodes.v", line 2 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_16_nodes.v Line: 5
+Warning (10274): Verilog HDL macro warning at apo_router_16_nodes.v(6): overriding existing definition for macro "N2", which was defined in "toplevel_apo_100_nodes.v", line 3 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_16_nodes.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file apo_router_16_nodes.v
+    Info (12023): Found entity 1: apo_router_16_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_16_nodes.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file apo_router_25_nodes.v
+    Info (12023): Found entity 1: apo_router_25_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_25_nodes.v Line: 7
+Warning (10274): Verilog HDL macro warning at apo_router_36_nodes.v(4): overriding existing definition for macro "K", which was defined in "apo_router_9_nodes.v", line 4 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_36_nodes.v Line: 4
+Warning (10274): Verilog HDL macro warning at apo_router_36_nodes.v(5): overriding existing definition for macro "N", which was defined in "toplevel_apo_100_nodes.v", line 2 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_36_nodes.v Line: 5
+Warning (10274): Verilog HDL macro warning at apo_router_36_nodes.v(6): overriding existing definition for macro "N2", which was defined in "toplevel_apo_100_nodes.v", line 3 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_36_nodes.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file apo_router_36_nodes.v
+    Info (12023): Found entity 1: apo_router_36_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_36_nodes.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file apo_router_49_nodes.v
+    Info (12023): Found entity 1: apo_router_49_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_49_nodes.v Line: 7
+Warning (10274): Verilog HDL macro warning at apo_router_64_nodes.v(4): overriding existing definition for macro "K", which was defined in "apo_router_9_nodes.v", line 4 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_64_nodes.v Line: 4
+Warning (10274): Verilog HDL macro warning at apo_router_64_nodes.v(5): overriding existing definition for macro "N", which was defined in "toplevel_apo_100_nodes.v", line 2 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_64_nodes.v Line: 5
+Warning (10274): Verilog HDL macro warning at apo_router_64_nodes.v(6): overriding existing definition for macro "N2", which was defined in "toplevel_apo_100_nodes.v", line 3 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_64_nodes.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file apo_router_64_nodes.v
+    Info (12023): Found entity 1: apo_router_64_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_64_nodes.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file apo_router_81_nodes.v
+    Info (12023): Found entity 1: apo_router_81_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_81_nodes.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file apo_router_100_nodes.v
+    Info (12023): Found entity 1: apo_router_100_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_100_nodes.v Line: 7
+Warning (10274): Verilog HDL macro warning at toplevel_apo_16_nodes.v(2): overriding existing definition for macro "N", which was defined in "toplevel_apo_100_nodes.v", line 2 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_16_nodes.v Line: 2
+Warning (10274): Verilog HDL macro warning at toplevel_apo_16_nodes.v(3): overriding existing definition for macro "N2", which was defined in "toplevel_apo_100_nodes.v", line 3 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_16_nodes.v Line: 3
+Warning (10274): Verilog HDL macro warning at toplevel_apo_16_nodes.v(4): overriding existing definition for macro "N_COUNT", which was defined in "toplevel_apo_100_nodes.v", line 4 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_16_nodes.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file toplevel_apo_16_nodes.v
+    Info (12023): Found entity 1: toplevel_apo_16_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_16_nodes.v Line: 5
+Warning (10274): Verilog HDL macro warning at select_data_16.v(2): overriding existing definition for macro "N", which was defined in "toplevel_apo_100_nodes.v", line 2 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_16.v Line: 2
+Warning (10274): Verilog HDL macro warning at select_data_16.v(3): overriding existing definition for macro "N2", which was defined in "toplevel_apo_100_nodes.v", line 3 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_16.v Line: 3
+Warning (10274): Verilog HDL macro warning at select_data_16.v(4): overriding existing definition for macro "K", which was defined in "apo_router_9_nodes.v", line 4 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_16.v Line: 4
+Warning (10274): Verilog HDL macro warning at select_data_16.v(5): overriding existing definition for macro "BIT", which was defined in "select_data_9.v", line 5 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_16.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file select_data_16.v
+    Info (12023): Found entity 1: select_data_16 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_16.v Line: 6
+Warning (10274): Verilog HDL macro warning at select_data_25.v(3): overriding existing definition for macro "N2", which was defined in "toplevel_apo_100_nodes.v", line 3 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_25.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file select_data_25.v
+    Info (12023): Found entity 1: select_data_25 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_25.v Line: 6
+Warning (10274): Verilog HDL macro warning at select_data_36.v(2): overriding existing definition for macro "N", which was defined in "toplevel_apo_100_nodes.v", line 2 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_36.v Line: 2
+Warning (10274): Verilog HDL macro warning at select_data_36.v(4): overriding existing definition for macro "K", which was defined in "apo_router_9_nodes.v", line 4 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_36.v Line: 4
+Warning (10274): Verilog HDL macro warning at select_data_36.v(5): overriding existing definition for macro "BIT", which was defined in "select_data_9.v", line 5 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_36.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file select_data_36.v
+    Info (12023): Found entity 1: select_data_36 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_36.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file select_data_49.v
+    Info (12023): Found entity 1: select_data_49 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_49.v Line: 6
+Warning (10274): Verilog HDL macro warning at select_data_64.v(2): overriding existing definition for macro "N", which was defined in "toplevel_apo_100_nodes.v", line 2 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_64.v Line: 2
+Warning (10274): Verilog HDL macro warning at select_data_64.v(3): overriding existing definition for macro "N2", which was defined in "toplevel_apo_100_nodes.v", line 3 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_64.v Line: 3
+Warning (10274): Verilog HDL macro warning at select_data_64.v(4): overriding existing definition for macro "K", which was defined in "apo_router_9_nodes.v", line 4 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_64.v Line: 4
+Warning (10274): Verilog HDL macro warning at select_data_64.v(5): overriding existing definition for macro "BIT", which was defined in "select_data_9.v", line 5 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_64.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file select_data_64.v
+    Info (12023): Found entity 1: select_data_64 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_64.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file select_data_81.v
+    Info (12023): Found entity 1: select_data_81 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_81.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file select_data_100.v
+    Info (12023): Found entity 1: select_data_100 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_100.v Line: 6
+Warning (10274): Verilog HDL macro warning at apo_router_121_nodes.v(4): overriding existing definition for macro "K", which was defined in "apo_router_9_nodes.v", line 4 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_121_nodes.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file apo_router_121_nodes.v
+    Info (12023): Found entity 1: apo_router_121_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_121_nodes.v Line: 7
+Warning (10274): Verilog HDL macro warning at select_data_121.v(4): overriding existing definition for macro "K", which was defined in "apo_router_9_nodes.v", line 4 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_121.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file select_data_121.v
+    Info (12023): Found entity 1: select_data_121 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_121.v Line: 6
+Warning (10274): Verilog HDL macro warning at toplevel_apo_121_nodes.v(4): overriding existing definition for macro "N_COUNT", which was defined in "toplevel_apo_100_nodes.v", line 4 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_121_nodes.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file toplevel_apo_121_nodes.v
+    Info (12023): Found entity 1: toplevel_apo_121_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_121_nodes.v Line: 5
+Warning (10274): Verilog HDL macro warning at select_data_144.v(2): overriding existing definition for macro "N", which was defined in "toplevel_apo_100_nodes.v", line 2 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_144.v Line: 2
+Warning (10274): Verilog HDL macro warning at select_data_144.v(3): overriding existing definition for macro "N2", which was defined in "toplevel_apo_100_nodes.v", line 3 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_144.v Line: 3
+Warning (10274): Verilog HDL macro warning at select_data_144.v(4): overriding existing definition for macro "K", which was defined in "apo_router_9_nodes.v", line 4 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_144.v Line: 4
+Warning (10274): Verilog HDL macro warning at select_data_144.v(5): overriding existing definition for macro "BIT", which was defined in "select_data_9.v", line 5 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_144.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file select_data_144.v
+    Info (12023): Found entity 1: select_data_144 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_144.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file select_data_169.v
+    Info (12023): Found entity 1: select_data_169 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_169.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file select_data_196.v
+    Info (12023): Found entity 1: select_data_196 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_196.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file select_data_225.v
+    Info (12023): Found entity 1: select_data_225 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_225.v Line: 6
+Warning (10274): Verilog HDL macro warning at apo_router_144_nodes.v(4): overriding existing definition for macro "K", which was defined in "apo_router_9_nodes.v", line 4 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_144_nodes.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file apo_router_144_nodes.v
+    Info (12023): Found entity 1: apo_router_144_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_144_nodes.v Line: 7
+Warning (10274): Verilog HDL macro warning at toplevel_apo_144_nodes.v(4): overriding existing definition for macro "N_COUNT", which was defined in "toplevel_apo_100_nodes.v", line 4 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_144_nodes.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file toplevel_apo_144_nodes.v
+    Info (12023): Found entity 1: toplevel_apo_144_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_144_nodes.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file apo_router_169_nodes.v
+    Info (12023): Found entity 1: apo_router_169_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_169_nodes.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file apo_router_196_nodes.v
+    Info (12023): Found entity 1: apo_router_196_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_196_nodes.v Line: 7
+Info (12021): Found 1 design units, including 1 entities, in source file apo_router_225_nodes.v
+    Info (12023): Found entity 1: apo_router_225_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_225_nodes.v Line: 7
+Warning (10274): Verilog HDL macro warning at toplevel_apo_169_nodes.v(2): overriding existing definition for macro "N", which was defined in "toplevel_apo_100_nodes.v", line 2 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_169_nodes.v Line: 2
+Warning (10274): Verilog HDL macro warning at toplevel_apo_169_nodes.v(3): overriding existing definition for macro "N2", which was defined in "toplevel_apo_100_nodes.v", line 3 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_169_nodes.v Line: 3
+Warning (10274): Verilog HDL macro warning at toplevel_apo_169_nodes.v(4): overriding existing definition for macro "N_COUNT", which was defined in "toplevel_apo_100_nodes.v", line 4 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_169_nodes.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file toplevel_apo_169_nodes.v
+    Info (12023): Found entity 1: toplevel_apo_169_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_169_nodes.v Line: 5
+Warning (10274): Verilog HDL macro warning at toplevel_apo_196_nodes.v(4): overriding existing definition for macro "N_COUNT", which was defined in "toplevel_apo_100_nodes.v", line 4 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_196_nodes.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file toplevel_apo_196_nodes.v
+    Info (12023): Found entity 1: toplevel_apo_196_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_196_nodes.v Line: 5
+Warning (10274): Verilog HDL macro warning at toplevel_apo_225_nodes.v(2): overriding existing definition for macro "N", which was defined in "toplevel_apo_100_nodes.v", line 2 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_225_nodes.v Line: 2
+Warning (10274): Verilog HDL macro warning at toplevel_apo_225_nodes.v(3): overriding existing definition for macro "N2", which was defined in "toplevel_apo_100_nodes.v", line 3 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_225_nodes.v Line: 3
+Warning (10274): Verilog HDL macro warning at toplevel_apo_225_nodes.v(4): overriding existing definition for macro "N_COUNT", which was defined in "toplevel_apo_100_nodes.v", line 4 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_225_nodes.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file toplevel_apo_225_nodes.v
+    Info (12023): Found entity 1: toplevel_apo_225_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_225_nodes.v Line: 5
+Warning (10274): Verilog HDL macro warning at apo_router_5_nodes.v(4): overriding existing definition for macro "K", which was defined in "apo_router_9_nodes.v", line 4 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 4
+Warning (10274): Verilog HDL macro warning at apo_router_5_nodes.v(5): overriding existing definition for macro "N", which was defined in "toplevel_apo_100_nodes.v", line 2 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 5
+Warning (10274): Verilog HDL macro warning at apo_router_5_nodes.v(6): overriding existing definition for macro "N2", which was defined in "toplevel_apo_100_nodes.v", line 3 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 6
+Info (12021): Found 1 design units, including 1 entities, in source file apo_router_5_nodes.v
+    Info (12023): Found entity 1: apo_router_5_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 7
+Warning (10274): Verilog HDL macro warning at select_data_5.v(4): overriding existing definition for macro "K", which was defined in "apo_router_9_nodes.v", line 4 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_5.v Line: 4
+Warning (10274): Verilog HDL macro warning at select_data_5.v(5): overriding existing definition for macro "BIT", which was defined in "select_data_9.v", line 5 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_5.v Line: 5
+Info (12021): Found 1 design units, including 1 entities, in source file select_data_5.v
+    Info (12023): Found entity 1: select_data_5 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/select_data_5.v Line: 6
+Warning (10274): Verilog HDL macro warning at toplevel_apo_5_nodes.v(4): overriding existing definition for macro "N_COUNT", which was defined in "toplevel_apo_100_nodes.v", line 4 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file toplevel_apo_5_nodes.v
+    Info (12023): Found entity 1: toplevel_apo_5_nodes File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 5
+Info (12127): Elaborating entity "toplevel_apo_5_nodes" for the top level hierarchy
+Warning (10034): Output port "out_data[127..5]" at toplevel_apo_5_nodes.v(25) has no driver File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+Info (12128): Elaborating entity "select_data_5" for hierarchy "select_data_5:sel" File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 44
+Info (12128): Elaborating entity "apo_router_5_nodes" for hierarchy "apo_router_5_nodes:r1" File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 47
+Warning (10230): Verilog HDL assignment warning at apo_router_5_nodes.v(60): truncated value with size 7 to match size of target (6) File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 60
+Warning (10230): Verilog HDL assignment warning at apo_router_5_nodes.v(66): truncated value with size 7 to match size of target (6) File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 66
+Warning (10230): Verilog HDL assignment warning at apo_router_5_nodes.v(72): truncated value with size 7 to match size of target (6) File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 72
+Warning (10230): Verilog HDL assignment warning at apo_router_5_nodes.v(78): truncated value with size 7 to match size of target (6) File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 78
+Warning (10230): Verilog HDL assignment warning at apo_router_5_nodes.v(84): truncated value with size 7 to match size of target (6) File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 84
+Warning (10230): Verilog HDL assignment warning at apo_router_5_nodes.v(101): truncated value with size 6 to match size of target (3) File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 101
+Warning (10230): Verilog HDL assignment warning at apo_router_5_nodes.v(102): truncated value with size 6 to match size of target (3) File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 102
+Warning (10230): Verilog HDL assignment warning at apo_router_5_nodes.v(107): truncated value with size 6 to match size of target (3) File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 107
+Warning (10230): Verilog HDL assignment warning at apo_router_5_nodes.v(145): truncated value with size 32 to match size of target (3) File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 145
+Warning (10230): Verilog HDL assignment warning at apo_router_5_nodes.v(146): truncated value with size 32 to match size of target (3) File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 146
+Info (278001): Inferred 10 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "apo_router_5_nodes:r1|Mod0" File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 124
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "apo_router_5_nodes:r1|Div0" File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 125
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "apo_router_5_nodes:r2|Mod0" File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 124
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "apo_router_5_nodes:r2|Div0" File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 125
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "apo_router_5_nodes:r3|Mod0" File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 124
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "apo_router_5_nodes:r3|Div0" File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 125
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "apo_router_5_nodes:r4|Mod0" File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 124
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "apo_router_5_nodes:r4|Div0" File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 125
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "apo_router_5_nodes:r5|Mod0" File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 124
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "apo_router_5_nodes:r5|Div0" File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 125
+Info (12130): Elaborated megafunction instantiation "apo_router_5_nodes:r1|lpm_divide:Mod0" File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 124
+Info (12133): Instantiated megafunction "apo_router_5_nodes:r1|lpm_divide:Mod0" with the following parameter: File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 124
+    Info (12134): Parameter "LPM_WIDTHN" = "3"
+    Info (12134): Parameter "LPM_WIDTHD" = "3"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_qfo.tdf
+    Info (12023): Found entity 1: lpm_divide_qfo File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/db/lpm_divide_qfo.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/abs_divider_0ag.tdf
+    Info (12023): Found entity 1: abs_divider_0ag File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/db/abs_divider_0ag.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_gse.tdf
+    Info (12023): Found entity 1: alt_u_div_gse File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/db/alt_u_div_gse.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_abs_in9.tdf
+    Info (12023): Found entity 1: lpm_abs_in9 File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/db/lpm_abs_in9.tdf Line: 22
+Info (12130): Elaborated megafunction instantiation "apo_router_5_nodes:r1|lpm_divide:Div0" File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 125
+Info (12133): Instantiated megafunction "apo_router_5_nodes:r1|lpm_divide:Div0" with the following parameter: File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/apo_router_5_nodes.v Line: 125
+    Info (12134): Parameter "LPM_WIDTHN" = "3"
+    Info (12134): Parameter "LPM_WIDTHD" = "3"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "SIGNED"
+    Info (12134): Parameter "LPM_HINT" = "LPM_REMAINDERPOSITIVE=FALSE"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_nno.tdf
+    Info (12023): Found entity 1: lpm_divide_nno File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/db/lpm_divide_nno.tdf Line: 24
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "out_data[5]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[6]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[7]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[8]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[9]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[10]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[11]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[12]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[13]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[14]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[15]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[16]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[17]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[18]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[19]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[20]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[21]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[22]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[23]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[24]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[25]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[26]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[27]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[28]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[29]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[30]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[31]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[32]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[33]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[34]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[35]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[36]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[37]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[38]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[39]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[40]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[41]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[42]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[43]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[44]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[45]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[46]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[47]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[48]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[49]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[50]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[51]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[52]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[53]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[54]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[55]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[56]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[57]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[58]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[59]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[60]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[61]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[62]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[63]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[64]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[65]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[66]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[67]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[68]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[69]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[70]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[71]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[72]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[73]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[74]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[75]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[76]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[77]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[78]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[79]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[80]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[81]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[82]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[83]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[84]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[85]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[86]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[87]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[88]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[89]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[90]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[91]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[92]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[93]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[94]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[95]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[96]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[97]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[98]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[99]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[100]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[101]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[102]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[103]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[104]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[105]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[106]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[107]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[108]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[109]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[110]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[111]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[112]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[113]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[114]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[115]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[116]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[117]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[118]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[119]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[120]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[121]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[122]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[123]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[124]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[125]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[126]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+    Warning (13410): Pin "out_data[127]" is stuck at GND File: C:/Users/Evgenij/Desktop/!!!!!! all statias/apo Adaptive dynamic shortest paths algorithm in networks-on-chip based on circulant topologies/! Dannie sinteza/apoNOC/toplevel_apo_5_nodes.v Line: 25
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 5 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 497 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 142 output pins
+    Info (21061): Implemented 349 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 197 warnings
+    Info: Peak virtual memory: 4848 megabytes
+    Info: Processing ended: Fri Dec 16 19:36:34 2022
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:29
+
+
